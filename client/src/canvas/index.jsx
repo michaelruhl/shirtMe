@@ -6,6 +6,7 @@ import Shirt from "./Shirt";
 import Backdrop from "./Backdrop";
 import CameraRig from "./CameraRig";
 
+const response = await fetch("../assets/potsdamer_platz_1k.hdr");
 const CanvasModel = () => {
   return (
     <Canvas
@@ -15,7 +16,7 @@ const CanvasModel = () => {
       className="w-full max-w-full h-full transition-all ease-in"
     >
       <ambientLight intensity={0.5} />
-      <Environment files="../src/assets/potsdamer_platz_1k.hdr" />
+      <Environment files={response} />
 
       <CameraRig>
         <Backdrop />
